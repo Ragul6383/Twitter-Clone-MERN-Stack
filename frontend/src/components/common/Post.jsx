@@ -104,20 +104,6 @@ const Post = ({ post }) => {
 				setComment("");
 				queryClient.invalidateQueries({ queryKey: ["posts"] });
 			},
-			// onSuccess: (updatedComments) => {
-			// 	// this is not the best UX, bc it will refetch all posts
-			// 	// queryClient.invalidateQueries({ queryKey: ["posts"] });
-
-			// 	// instead, update the cache directly for that post
-			// 	queryClient.setQueryData(["posts"], (oldData) => {
-			// 		return oldData.map((p) => {
-			// 			if (p._id === post._id) {
-			// 				return { ...p, comments: updatedComments };
-			// 			}
-			// 			return p;
-			// 		});
-			// 	});
-			// },
 			onError: (error) => {
 				toast.error(error.message);
 			},
