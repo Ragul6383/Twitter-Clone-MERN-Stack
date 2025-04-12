@@ -63,7 +63,7 @@ CLOUDINARY_API_KEY=...
 CLOUDINARY_API_SECRET=...
 ```
 
-Just replace the `...` with your actual keys when using it. Let me know if you want me to paste the full updated README with this included too.
+Just replace the `...` with your actual keys when using it.
 
 
 ### 3. Run the app:
