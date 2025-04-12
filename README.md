@@ -49,25 +49,24 @@ git clone https://github.com/Ragul6383/Twitter-Clone-MERN-Stack.git
 cd Twitter-Clone-MERN-Stack
 ```
 
-### 2. Install dependencies:
+### 2. Environment Setup:
 
-#### For frontend:
-```bash
-cd frontend
-npm install
+Create a `.env` file in the `backend` folder with the following variables:
+
+```env
+MONGO_URI=...
+PORT=...
+JWT_SECRET=...
+NODE_ENV=...
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
 ```
 
-#### For backend:
-```bash
-cd backend
-npm install
-```
+Just replace the `...` with your actual keys when using it. Let me know if you want me to paste the full updated README with this included too.
 
-### 3. Environment Setup:
 
-Create a `.env` file in the `backend` folder with the necessary environment variables (e.g., MongoDB URI, JWT secret, etc.).
-
-### 4. Run the app:
+### 3. Run the app:
 
 #### Build the frontend:
 ```bash
@@ -89,11 +88,7 @@ This project was created as a personal exercise to practice and demonstrate prof
 
 ## 🔗 Live Demo
 
-[GitHub Repository - Twitter Clone MERN Stack](https://github.com/Ragul6383/Twitter-Clone-MERN-Stack/tree/main)
+[GitHub Repository - Twitter Clone MERN Stack](https://twitter-clone-mern-stack.onrender.com)
 
 ---
 
-## 📬 Contact
-
-- 📧 Email: yourname@gmail.com  
-- 💼 [LinkedIn](https://linkedin.com/in/your-profile)
