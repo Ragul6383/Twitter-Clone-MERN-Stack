@@ -1,7 +1,7 @@
 import Notification from "../models/notification.model.js";
 import Post from "../models/post.model.js";
 import User from "../models/user.model.js";
-import {v2 as cloudinary} from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
 export const createPost = async (req, res) => {
     try {
@@ -93,7 +93,9 @@ export const likeUnlikePost = async (req, res) => {
             //unlike post
             await Post.updateOne({_id:postId},{$pull: {likes: UserId}});
             await User.updateOne({_id:UserId},{$pull: {likedPosts: postId}});
-            res.status(200).json({message: "Post unliked successfully"});
+
+            const updatedLikes = post.likes.filter((like) => like.toString() !== UserId.toString());
+            res.status(200).json(updatedLikes);
         }else {
             //like post
             post.likes.push(UserId);
@@ -108,7 +110,8 @@ export const likeUnlikePost = async (req, res) => {
         })  
         await notification.save();
         
-        res.status(200).json({message: "Post liked successfully"});
+        const updatedLikes = post.likes;
+        res.status(200).json(updatedLikes);
         
     } 
     } catch (error) {
